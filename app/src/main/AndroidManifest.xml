@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PosApplication">
         <activity
-            android:name="com.sharmin.posapplication.OrderActivity"
+            android:name="com.sharmin.posapplication.activities.OrderActivity"
             android:exported="false" />
         <activity
-            android:name="com.sharmin.posapplication.SettingActivity"
+            android:name="com.sharmin.posapplication.activities.SettingActivity"
             android:exported="false" />
         <activity
-            android:name="com.sharmin.posapplication.LoginActivity"
+            android:name="com.sharmin.posapplication.activities.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

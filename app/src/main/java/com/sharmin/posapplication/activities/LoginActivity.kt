@@ -1,4 +1,4 @@
-package com.sharmin.posapplication
+package com.sharmin.posapplication.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.sharmin.posapplication.R
 
 class LoginActivity : AppCompatActivity() {
 
