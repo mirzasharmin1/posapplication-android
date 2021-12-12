@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">POS Application</string>
+    <string name="stamford_pos_application">Stamford POS Application</string>
+    <string name="user_label">User:</string>
+    <string name="password_label">Password</string>
+    <string name="login_label">Login</string>
+</resources>
