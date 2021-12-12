@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.myapplication.R
 
 class LoginActivity : AppCompatActivity() {
 
