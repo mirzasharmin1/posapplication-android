@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sharmin.posapplication.activities.LoginActivity">
+    tools:context="com.sharmin.posapplication.activities.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:id="@+id/headline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="17sp"
+            android:textSize="@dimen/heading_text_size"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,14 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="60dp"
+            app:layout_constraintGuide_begin="@dimen/user_guideline_begin"
             app:layout_constraintTop_toBottomOf="@id/headline" />
 
         <TextView
             android:id="@+id/userLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textSize="@dimen/label_text_size"
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="@+id/userGuideline"
@@ -50,9 +51,9 @@
 
         <EditText
             android:id="@+id/userInput"
-            android:layout_width="140dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="@dimen/login_input_width"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_marginStart="@dimen/login_input_margin_start"
             android:background="@drawable/edit_text_border"
             app:layout_constraintStart_toEndOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="@+id/userGuideline"
@@ -63,14 +64,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="110dp"
+            app:layout_constraintGuide_begin="@dimen/password_guideline_begin"
             app:layout_constraintTop_toBottomOf="@id/headline" />
 
         <TextView
             android:id="@+id/passwordLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
+            android:textSize="@dimen/label_text_size"
             android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="@+id/passwordGuideline"
@@ -79,9 +80,9 @@
 
         <EditText
             android:id="@+id/passwordInput"
-            android:layout_width="140dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="@dimen/login_input_width"
+            android:layout_height="@dimen/login_input_height"
+            android:layout_marginStart="@dimen/login_input_margin_start"
             android:inputType="textPassword"
             android:background="@drawable/edit_text_border"
             app:layout_constraintStart_toEndOf="@+id/guideline"
@@ -90,9 +91,10 @@
 
         <Button
             android:id="@+id/submitBtn"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_width="@dimen/login_button_width"
+            android:layout_height="@dimen/login_button_height"
+            android:layout_marginTop="@dimen/login_button_margin_top"
+            android:textSize="@dimen/label_text_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/passwordInput"

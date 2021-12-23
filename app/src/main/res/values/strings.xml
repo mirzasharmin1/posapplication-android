@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">POS Application</string>
     <string name="stamford_pos_application">Stamford POS Application</string>
+    <string name="stamford_pos_setting">Stamford POS Setting</string>
     <string name="user_label">User:</string>
     <string name="password_label">Password</string>
     <string name="login_label">Login</string>
+    <string name="setup_branch_label">Setup Branch</string>
+    <string name="update_branch_label">Update Branch</string>
+    <string name="change_ui_settings_label">Change UI Settings</string>
+    <string name="macarons_label">Macarons</string>
+    <string name="drinks_label">Drinks</string>
+    <string name="desserts_label">Desserts</string>
+    <string name="icecreams_label">Ice-creams</string>
+    <string name="thai_dishes_label">Thai Dishes</string>
+    <string name="fruits_label">Fruits</string>
 </resources>
