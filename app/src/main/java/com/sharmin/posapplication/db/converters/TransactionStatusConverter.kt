@@ -1,10 +1,8 @@
-package com.sharmin.posapplication.models.converters
+package com.sharmin.posapplication.db.converters
 
-import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
-import com.sharmin.posapplication.models.TransactionStatus
+import com.sharmin.posapplication.db.models.TransactionStatus
 
-@ProvidedTypeConverter
 class  TransactionStatusConverter {
     @TypeConverter
     fun toTransactionStatus(value: Int): TransactionStatus = enumValues<TransactionStatus>()[value]

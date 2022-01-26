@@ -1,7 +1,7 @@
 package com.sharmin.posapplication.repositories
 
-import com.sharmin.posapplication.models.Product
-import com.sharmin.posapplication.models.ProductType
+import com.sharmin.posapplication.db.models.Product
+import com.sharmin.posapplication.db.models.ProductType
 
 class ProductRepository {
     fun getProducts(): List<Product> {

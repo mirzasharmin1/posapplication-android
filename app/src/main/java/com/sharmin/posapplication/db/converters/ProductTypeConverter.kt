@@ -1,11 +1,10 @@
-package com.sharmin.posapplication.models.converters
+package com.sharmin.posapplication.db.converters
 
-import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
-import com.sharmin.posapplication.models.ProductType
+import com.sharmin.posapplication.db.models.ProductType
 
-@ProvidedTypeConverter
 class  ProductTypeConverter {
+
     @TypeConverter
     fun toProductType(value: Int): ProductType = enumValues<ProductType>()[value]
     @TypeConverter

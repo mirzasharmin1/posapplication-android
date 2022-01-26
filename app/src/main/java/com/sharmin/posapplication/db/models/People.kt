@@ -1,4 +1,4 @@
-package com.sharmin.posapplication.models
+package com.sharmin.posapplication.db.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -7,5 +7,5 @@ import androidx.room.PrimaryKey
 data class People(
     @PrimaryKey val id: Int,
     val role: Role,
-    val name: String
+    val name: String?
 )

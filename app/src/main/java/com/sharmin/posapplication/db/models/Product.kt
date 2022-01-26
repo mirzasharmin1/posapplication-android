@@ -1,4 +1,4 @@
-package com.sharmin.posapplication.models
+package com.sharmin.posapplication.db.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

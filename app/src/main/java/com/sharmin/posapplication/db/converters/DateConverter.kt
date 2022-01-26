@@ -1,10 +1,8 @@
-package com.sharmin.posapplication.models.converters
+package com.sharmin.posapplication.db.converters
 
-import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
 import java.util.*
 
-@ProvidedTypeConverter
 class DateConverter {
     @TypeConverter
     fun fromTimestamp(value: Long?): Date? {

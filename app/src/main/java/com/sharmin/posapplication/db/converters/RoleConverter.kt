@@ -1,10 +1,8 @@
-package com.sharmin.posapplication.models.converters
+package com.sharmin.posapplication.db.converters
 
-import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
-import com.sharmin.posapplication.models.Role
+import com.sharmin.posapplication.db.models.Role
 
-@ProvidedTypeConverter
 class  RoleConverter {
     @TypeConverter
     fun toRole(value: Int): Role = enumValues<Role>()[value]
