@@ -1,5 +1,6 @@
 package com.sharmin.posapplication.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -11,7 +12,7 @@ interface ProductDao {
 
     @Transaction
     @Query("SELECT * FROM Product")
-    fun getProducts(): List<Product>
+    fun getProducts(): LiveData<List<Product>>
 
     @Insert
     fun insert(product: Product)

@@ -6,6 +6,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class People(
     @PrimaryKey val id: Int,
-    val role: Role,
+    val role: String,
     val name: String?
 )

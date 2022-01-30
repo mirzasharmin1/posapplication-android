@@ -1,4 +1,4 @@
-package com.sharmin.posapplication.activities
+package com.sharmin.posapplication.screens.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,14 +10,27 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import com.sharmin.posapplication.R
+import com.sharmin.posapplication.repositories.ProductRepository
+import com.sharmin.posapplication.screens.order.OrderActivity
+import com.sharmin.posapplication.screens.settings.SettingActivity
+import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+
+    val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setListeners()
+
+        viewModel.products.observe(this, {
+            Timber.d("PRODUCTS $it")
+        })
     }
 
     private fun setListeners() {

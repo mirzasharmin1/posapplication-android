@@ -1,13 +1,11 @@
-package com.sharmin.posapplication.activities
+package com.sharmin.posapplication.screens.order
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import com.sharmin.posapplication.R
-import kotlinx.coroutines.*
-import kotlin.coroutines.CoroutineContext
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class OrderActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

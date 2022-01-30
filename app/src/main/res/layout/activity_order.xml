@@ -4,68 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sharmin.posapplication.activities.OrderActivity">
+    tools:context="com.sharmin.posapplication.screens.order.OrderActivity">
 
-    <LinearLayout
-        android:id="@+id/topbar"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp">
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <Button
-            android:layout_width="@dimen/order_button_width"
-            android:layout_height="@dimen/order_button_height"
-            android:textSize="@dimen/order_button_text_size"
-            android:text="@string/macarons_label" />
+        <LinearLayout
+            android:id="@+id/topbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:layout_width="@dimen/order_button_width"
-            android:layout_height="@dimen/order_button_height"
-            android:textSize="@dimen/order_button_text_size"
-            android:layout_marginStart="@dimen/order_button_margin_start"
-            android:text="@string/drinks_label" />
+            <Button
+                android:layout_width="@dimen/order_button_width"
+                android:layout_height="@dimen/order_button_height"
+                android:textSize="@dimen/order_button_text_size"
+                android:text="@string/macarons_label" />
 
-        <Button
-            android:layout_width="@dimen/order_button_width"
-            android:layout_height="@dimen/order_button_height"
-            android:textSize="@dimen/order_button_text_size"
-            android:layout_marginStart="@dimen/order_button_margin_start"
-            android:text="@string/desserts_label" />
+            <Button
+                android:layout_width="@dimen/order_button_width"
+                android:layout_height="@dimen/order_button_height"
+                android:textSize="@dimen/order_button_text_size"
+                android:layout_marginStart="@dimen/order_button_margin_start"
+                android:text="@string/drinks_label" />
 
-    </LinearLayout>
+            <Button
+                android:layout_width="@dimen/order_button_width"
+                android:layout_height="@dimen/order_button_height"
+                android:textSize="@dimen/order_button_text_size"
+                android:layout_marginStart="@dimen/order_button_margin_start"
+                android:text="@string/desserts_label" />
 
-    <LinearLayout
-        android:id="@+id/bottombar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/topbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp">
+        </LinearLayout>
 
-        <Button
-            android:layout_width="@dimen/order_button_width"
-            android:layout_height="@dimen/order_button_height"
-            android:textSize="@dimen/order_button_text_size"
-            android:text="@string/icecreams_label" />
+        <LinearLayout
+            android:id="@+id/bottombar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/topbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="50dp">
 
-        <Button
-            android:layout_width="@dimen/order_button_width"
-            android:layout_height="@dimen/order_button_height"
-            android:textSize="@dimen/order_button_text_size"
-            android:layout_marginStart="@dimen/order_button_margin_start"
-            android:text="@string/thai_dishes_label" />
+            <Button
+                android:layout_width="@dimen/order_button_width"
+                android:layout_height="@dimen/order_button_height"
+                android:textSize="@dimen/order_button_text_size"
+                android:text="@string/icecreams_label" />
 
-        <Button
-            android:layout_width="@dimen/order_button_width"
-            android:layout_height="@dimen/order_button_height"
-            android:textSize="@dimen/order_button_text_size"
-            android:layout_marginStart="@dimen/order_button_margin_start"
-            android:text="@string/fruits_label" />
+            <Button
+                android:layout_width="@dimen/order_button_width"
+                android:layout_height="@dimen/order_button_height"
+                android:textSize="@dimen/order_button_text_size"
+                android:layout_marginStart="@dimen/order_button_margin_start"
+                android:text="@string/thai_dishes_label" />
 
-    </LinearLayout>
+            <Button
+                android:layout_width="@dimen/order_button_width"
+                android:layout_height="@dimen/order_button_height"
+                android:textSize="@dimen/order_button_text_size"
+                android:layout_marginStart="@dimen/order_button_margin_start"
+                android:text="@string/fruits_label" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

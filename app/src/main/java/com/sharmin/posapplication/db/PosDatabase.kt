@@ -11,6 +11,13 @@ import com.sharmin.posapplication.db.dao.ProductDao
 import com.sharmin.posapplication.db.dao.TransactionDao
 import com.sharmin.posapplication.db.dao.TransactionItemDao
 import com.sharmin.posapplication.db.models.*
+import android.content.Context
+import androidx.room.Room
+import androidx.sqlite.db.SupportSQLiteDatabase
+import com.sharmin.posapplication.db.dummy.dummyProducts
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Database(
     entities = [
@@ -19,7 +26,8 @@ import com.sharmin.posapplication.db.models.*
         Transaction::class,
         TransactionItem::class
     ],
-    version = 1
+    version = 1,
+    exportSchema = true
 )
 @TypeConverters(DateConverter::class, ProductTypeConverter::class, RoleConverter::class, TransactionStatusConverter::class)
 abstract class PosDatabase : RoomDatabase() {
@@ -29,4 +37,60 @@ abstract class PosDatabase : RoomDatabase() {
     abstract fun transactionDao(): TransactionDao
 
     abstract fun transactionItemDao(): TransactionItemDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: PosDatabase? = null
+
+        fun getDatabase(
+            context: Context,
+            scope: CoroutineScope
+        ): PosDatabase {
+            // if the INSTANCE is not null, then return it,
+            // if it is, then create the database
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    PosDatabase::class.java,
+                    "pos_database"
+                )
+                    // Wipes and rebuilds instead of migrating if no Migration object.
+                    // Migration is not part of this codelab.
+                    .fallbackToDestructiveMigration()
+                    .addCallback(WordDatabaseCallback(scope))
+                    .build()
+                INSTANCE = instance
+                // return instance
+                instance
+            }
+        }
+
+        private class WordDatabaseCallback(
+            private val scope: CoroutineScope
+        ) : RoomDatabase.Callback() {
+            /**
+             * Override the onCreate method to populate the database.
+             */
+            override fun onCreate(db: SupportSQLiteDatabase) {
+                super.onCreate(db)
+                // If you want to keep the data through app restarts,
+                // comment out the following line.
+                INSTANCE?.let { database ->
+                    scope.launch(Dispatchers.IO) {
+                        populateProducts(database.productDao())
+                    }
+                }
+            }
+        }
+
+        /**
+         * Populate the database in a new coroutine.
+         * If you want to start with more words, just add them.
+         */
+        suspend fun populateProducts(productDao: ProductDao) {
+            dummyProducts().map {
+                productDao.insert(it)
+            }
+        }
+    }
 }
