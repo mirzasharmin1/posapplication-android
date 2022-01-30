@@ -12,6 +12,17 @@
         android:theme="@style/Theme.PosApplication" >
         <activity
             android:theme="@style/Theme.PosApplication.NoActionBar"
+            android:name=".screens.main.MainActivity"
+            android:exported="true"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:theme="@style/Theme.PosApplication.NoActionBar"
             android:name=".screens.order.OrderActivity"
             android:exported="false"
             android:screenOrientation="landscape"/>
@@ -22,15 +33,9 @@
             android:screenOrientation="landscape"/>
         <activity
             android:theme="@style/Theme.PosApplication.NoActionBar"
-            android:name=".screens.main.MainActivity"
-            android:exported="true"
-            android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".screens.order_placement.OrderPlacementActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>
