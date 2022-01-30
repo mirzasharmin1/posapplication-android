@@ -14,4 +14,7 @@
     <string name="icecreams_label">Ice-creams</string>
     <string name="thai_dishes_label">Thai Dishes</string>
     <string name="fruits_label">Fruits</string>
+    <string name="branch_name_label">Branch Name:</string>
+    <string name="staff_name_label">Staff Name:</string>
+    <string name="staff_id_label">Staff ID:</string>
 </resources>

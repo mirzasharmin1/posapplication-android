@@ -21,4 +21,12 @@
     <dimen name="order_button_height">250dp</dimen>
     <dimen name="order_button_text_size">30sp</dimen>
     <dimen name="order_button_margin_start">60dp</dimen>
+    <dimen name="order_section_horizontal_margin">10dp</dimen>
+    <dimen name="order_section_start_margin">20dp</dimen>
+    <dimen name="order_section_end_margin">7dp</dimen>
+    <dimen name="order_section_vertical_margin">15dp</dimen>
+    <dimen name="order_right_section_margin">10dp</dimen>
+    <dimen name="order_right_top_margin_start">20dp</dimen>
+    <dimen name="order_right_top_text_size">20sp</dimen>
+    <dimen name="order_right_top_margin_vertical">10dp</dimen>
 </resources>
