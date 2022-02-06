@@ -1,12 +1,15 @@
 package com.sharmin.posapplication.screens.order_placement
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.sharmin.posapplication.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class OrderPlacementActivity : AppCompatActivity() {
+
+    val viewModel: OrderPlacementViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

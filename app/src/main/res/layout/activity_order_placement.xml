@@ -23,6 +23,12 @@
         android:layout_marginVertical="@dimen/order_section_vertical_margin"
         android:background="@drawable/rectangle_border">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_product_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_order_product_list"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -104,7 +110,14 @@
             app:layout_constraintBottom_toTopOf="@id/right_bottom_guideline"
             android:layout_marginHorizontal="@dimen/order_right_section_margin"
             android:layout_marginVertical="@dimen/order_right_section_margin"
-            android:background="@drawable/rectangle_border" />
+            android:background="@drawable/rectangle_border">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_cart_item_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_order_cart_list"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/right_bottom_guideline"

@@ -29,4 +29,11 @@
     <dimen name="order_right_top_margin_start">20dp</dimen>
     <dimen name="order_right_top_text_size">20sp</dimen>
     <dimen name="order_right_top_margin_vertical">10dp</dimen>
+    <dimen name="product_image_dimen">130dp</dimen>
+    <dimen name="product_image_item_vertical">15dp</dimen>
+    <dimen name="product_title_margin_start">30dp</dimen>
+    <dimen name="product_title_text_size">30sp</dimen>
+    <dimen name="remove_item_margin_start">15dp</dimen>
+    <dimen name="cart_item_margin_start">20dp</dimen>
+    <dimen name="cart_item_text_size">20sp</dimen>
 </resources>

@@ -17,4 +17,9 @@
     <string name="branch_name_label">Branch Name:</string>
     <string name="staff_name_label">Staff Name:</string>
     <string name="staff_id_label">Staff ID:</string>
+    <string name="cart_item_number">#</string>
+    <string name="cart_item_product">Product</string>
+    <string name="cart_item_quantity">Quantity</string>
+    <string name="cart_item_price">Price</string>
+    <string name="cart_item_total_price">Total Price</string>
 </resources>
