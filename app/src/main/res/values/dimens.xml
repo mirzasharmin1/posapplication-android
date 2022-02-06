@@ -36,4 +36,5 @@
     <dimen name="remove_item_margin_start">15dp</dimen>
     <dimen name="cart_item_margin_start">20dp</dimen>
     <dimen name="cart_item_text_size">20sp</dimen>
+    <dimen name="total_price_text_size">30sp</dimen>
 </resources>

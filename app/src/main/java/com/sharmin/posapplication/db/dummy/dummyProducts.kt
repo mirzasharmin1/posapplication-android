@@ -6,7 +6,7 @@ import com.sharmin.posapplication.db.models.ProductType
 fun dummyProducts(): List<Product> {
     return listOf(
         Product(1, "Coke", ProductType.DRINKS, 15, 100, "https://st.depositphotos.com/1024764/1918/i/600/depositphotos_19186871-stock-photo-aluminum-red-can-of-coca.jpg"),
-        Product(2, "Sprite", ProductType.DRINKS, 16, 100, "https://bigboy.co.th/pattaya/wp-content/uploads/sites/3/2020/05/Sprite-Can.png"),
+        Product(2, "Sprite", ProductType.DRINKS, 16, 100, "https://i.pinimg.com/originals/16/f1/95/16f195edd08478f7d447b726ea1df148.jpg"),
         Product(3, "Pepsi", ProductType.DRINKS, 12, 80, "https://www.bellesupermarket.com/wp-content/uploads/2021/02/pepsi-can-33cl-1.jpg"),
         Product(4, "Fanta", ProductType.DRINKS, 16, 50, "https://images.heb.com/is/image/HEBGrocery/001603604"),
         Product(5, "Red Velvet", ProductType.DESSERTS, 60, 30, "https://www.livewellbakeoften.com/wp-content/uploads/2019/01/Red-Velvet-Cake-8.jpg"),

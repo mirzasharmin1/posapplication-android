@@ -1,45 +1,48 @@
 package com.sharmin.posapplication.screens.order_placement
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.sharmin.posapplication.R
 import com.sharmin.posapplication.databinding.ActivityOrderPlacementBinding
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class OrderPlacementActivity : AppCompatActivity() {
 
-    val viewModel: OrderPlacementViewModel by viewModels()
     private lateinit var binding: ActivityOrderPlacementBinding
-    private lateinit var cartListAdapter: CartListAdapter
-    private lateinit var productListAdapter: ProductListAdapter
+
+    @Inject
+    lateinit var productListFragment: ProductListFragment
+
+    @Inject
+    lateinit var cartListFragment: CartListFragment
+
+    @Inject
+    lateinit var cartTotalFragment: CartTotalFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderPlacementBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupView()
-        setUpListeners()
     }
 
     private fun setupView() {
-        productListAdapter = ProductListAdapter(viewModel::addProductToCart, viewModel::removeProductFromCart)
-        binding.recyclerViewProductList.adapter = productListAdapter
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.product_list_fragment, productListFragment)
+            .commit()
 
-        cartListAdapter = CartListAdapter()
-        binding.recyclerViewCartItemList.adapter = cartListAdapter
-    }
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.cart_list_fragment, cartListFragment)
+            .commit()
 
-    private fun setUpListeners() {
-        viewModel.products.observe(this, {
-            it
-            productListAdapter.submitList(it)
-        })
-
-        viewModel.cartItems.observe(this, {
-            it
-            cartListAdapter.addHeaderAndSubmitList(it)
-        })
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.cart_total_fragment, cartTotalFragment)
+            .commit()
     }
 
     companion object {
