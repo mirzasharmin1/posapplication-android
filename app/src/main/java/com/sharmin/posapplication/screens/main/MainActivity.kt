@@ -3,66 +3,51 @@ package com.sharmin.posapplication.screens.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.view.MotionEvent
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
-import com.sharmin.posapplication.R
-import com.sharmin.posapplication.repositories.ProductRepository
+import com.sharmin.posapplication.databinding.ActivityMainBinding
 import com.sharmin.posapplication.screens.order.OrderActivity
 import com.sharmin.posapplication.screens.settings.SettingActivity
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         setListeners()
-
-        viewModel.products.observe(this, {
-            Timber.d("PRODUCTS $it")
-        })
     }
 
     private fun setListeners() {
-        val headlineTextView = findViewById<TextView>(R.id.headline)
-        val userInput = findViewById<EditText>(R.id.userInput)
-        val passwordInput = findViewById<EditText>(R.id.passwordInput)
-        val button = findViewById<Button>(R.id.submitBtn)
 
-        headlineTextView.setCustomLongClickListener(6000) {
+        binding.headline.setOnLongClickListener {
             navigateToSettingActivity()
+            true
         }
 
-        button.setOnClickListener {
-            //showToastMessage()
+        binding.submitBtn.setOnClickListener {
+            viewModel.handleRememberMe(binding.userInput.text.toString(), binding.passwordInput.text.toString())
             navigateToOrderActivity()
         }
-    }
+        
+        binding.rememberMeCheckbox.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.setRememberMe(isChecked)
+        }
 
-    fun View.setCustomLongClickListener(clickDuration: Long, listener: () -> Unit) {
-        setOnTouchListener(object : View.OnTouchListener {
+        viewModel.userNameLiveData.observe(this, {
+            binding.userInput.setText(it)
+        })
 
-            private val longClickDuration = clickDuration
-            private val handler = Handler()
+        viewModel.passwordLiveData.observe(this, {
+            binding.passwordInput.setText(it)
+        })
 
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                if (event?.action == MotionEvent.ACTION_DOWN) {
-                    handler.postDelayed({ listener.invoke() }, longClickDuration)
-                } else if (event?.action == MotionEvent.ACTION_UP) {
-                    handler.removeCallbacksAndMessages(null)
-                }
-                return true
-            }
+        viewModel.rememberMeLiveData.observe(this, {
+            binding.rememberMeCheckbox.isChecked = it
         })
     }
 
@@ -72,10 +57,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToOrderActivity() {
         startActivity(Intent(this, OrderActivity::class.java))
-    }
-
-    private fun showToastMessage() {
-        val msg = "Sharmin has clicked the login button"
-        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 }

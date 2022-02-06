@@ -60,33 +60,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:text="@string/branch_name_label"
                     android:textSize="@dimen/order_right_top_text_size"
-                    android:layout_marginStart="@dimen/order_right_top_margin_start"
-                    android:layout_marginTop="@dimen/order_right_top_margin_vertical" />
-
-                <TextView
-                    android:id="@+id/staffNameLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/branchNameLabel"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:text="@string/staff_name_label"
-                    android:textSize="@dimen/order_right_top_text_size"
-                    android:layout_marginStart="@dimen/order_right_top_margin_start"
-                    android:layout_marginTop="@dimen/order_right_top_margin_vertical" />
-
-                <TextView
-                    android:id="@+id/staffIdLabel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/staffNameLabel"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:text="@string/staff_id_label"
-                    android:textSize="@dimen/order_right_top_text_size"
-                    android:layout_marginStart="@dimen/order_right_top_margin_start"
-                    android:layout_marginVertical="@dimen/order_right_top_margin_vertical" />
+                    android:layout_marginStart="@dimen/order_right_top_margin_start" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -95,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.20" />
+                app:layout_constraintGuide_percent="0.10" />
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/cart_list_fragment"
@@ -104,16 +82,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/right_top_guideline"
-                app:layout_constraintBottom_toTopOf="@id/right_bottom_guideline"
+                app:layout_constraintBottom_toTopOf="@id/right_mid_guideline"
                 android:layout_marginHorizontal="@dimen/order_right_section_margin"
                 android:layout_marginVertical="@dimen/order_right_section_margin" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/right_bottom_guideline"
+                android:id="@+id/right_mid_guideline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.85" />
+                app:layout_constraintGuide_percent="0.75" />
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/cart_total_fragment"
@@ -121,12 +99,29 @@
                 android:layout_width="0dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/right_mid_guideline"
+                app:layout_constraintBottom_toTopOf="@id/right_bottom_guideline"
+                android:layout_marginHorizontal="@dimen/order_right_section_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_bottom_guideline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/right_bottom_guideline"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginHorizontal="@dimen/order_right_section_margin"
-                android:layout_marginBottom="@dimen/order_right_section_margin" />
+                android:layout_marginEnd="@dimen/order_right_section_margin"
+                android:textSize="@dimen/order_submit_btn_textsize"
+                android:text="@string/submit_order_label" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>
