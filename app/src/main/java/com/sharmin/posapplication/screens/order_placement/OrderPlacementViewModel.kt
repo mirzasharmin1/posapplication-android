@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class OrderPlacementViewModel @Inject constructor(
     private val transactionRepository: TransactionRepository,
-    private val cartRepository: CartRepository
+    private val cartRepository: CartRepository,
 ) : ViewModel() {
 
     val transactionSuccessful = MutableLiveData<Boolean>(false)

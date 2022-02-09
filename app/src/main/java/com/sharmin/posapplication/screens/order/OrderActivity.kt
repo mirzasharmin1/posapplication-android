@@ -46,8 +46,9 @@ class OrderActivity : AppCompatActivity() {
     }
 
     private fun navigateToOrderPlacementActivity(productType: ProductType) {
-        val intent = Intent(this, OrderPlacementActivity::class.java)
-        intent.putExtra(OrderPlacementActivity.BUNDLE_PRODUCT_FILTER_TYPE, productType)
+        val intent = Intent(this, OrderPlacementActivity::class.java).apply {
+            putExtra(OrderPlacementActivity.BUNDLE_PRODUCT_FILTER_TYPE, productType)
+        }
         startActivity(intent)
     }
 }

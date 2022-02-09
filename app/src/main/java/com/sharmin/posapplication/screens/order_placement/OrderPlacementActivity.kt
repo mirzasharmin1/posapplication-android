@@ -5,11 +5,10 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.viewModels
 import com.sharmin.posapplication.R
 import com.sharmin.posapplication.databinding.ActivityOrderPlacementBinding
+import com.sharmin.posapplication.db.models.ProductType
 import com.sharmin.posapplication.screens.order.OrderActivity
-import com.sharmin.posapplication.screens.settings.SettingActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -19,8 +18,7 @@ class OrderPlacementActivity : AppCompatActivity() {
     val viewModel: OrderPlacementViewModel by viewModels()
     private lateinit var binding: ActivityOrderPlacementBinding
 
-    @Inject
-    lateinit var productListFragment: ProductListFragment
+    lateinit var productType: ProductType
 
     @Inject
     lateinit var cartListFragment: CartListFragment
@@ -31,12 +29,16 @@ class OrderPlacementActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderPlacementBinding.inflate(layoutInflater)
+
+        productType = intent.getSerializableExtra(BUNDLE_PRODUCT_FILTER_TYPE) as ProductType
+
         setContentView(binding.root)
         setupView()
         setListeners()
     }
 
     private fun setupView() {
+        val productListFragment = ProductListFragment(productType)
         supportFragmentManager
             .beginTransaction()
             .add(R.id.product_list_fragment, productListFragment)

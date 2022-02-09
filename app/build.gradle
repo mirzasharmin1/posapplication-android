@@ -77,6 +77,9 @@ dependencies {
 
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation 'app.cash.inject:inflation-inject:1.0.1'
+    kapt 'app.cash.inject:inflation-inject-processor:1.0.1'
 }
 
 kapt {

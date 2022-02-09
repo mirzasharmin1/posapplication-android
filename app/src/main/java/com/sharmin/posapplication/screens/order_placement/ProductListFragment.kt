@@ -7,13 +7,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.sharmin.posapplication.databinding.FragmentProductListBinding
+import com.sharmin.posapplication.db.models.ProductType
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ProductListFragment @Inject constructor() : Fragment() {
+class ProductListFragment @Inject constructor(val productType: ProductType) : Fragment() {
 
-    val viewModel: ProductListViewModel by viewModels()
+    @Inject lateinit var productListViewModelFactory: ProductListViewModel.ProductListViewModelFactory
+    private val viewModel: ProductListViewModel by viewModels {
+        ProductListViewModel.provideFactory(productListViewModelFactory, productType)
+    }
     private lateinit var binding: FragmentProductListBinding
     private lateinit var productListAdapter: ProductListAdapter
 
