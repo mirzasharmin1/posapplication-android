@@ -6,10 +6,11 @@ import java.text.DecimalFormat
 
 @Entity
 data class Product(
-    @PrimaryKey val id: Int,
     val name: String,
     val productType: ProductType,
     val price: Int,
     val unitsAvailable: Int,
     val productImg: String
-)
+) {
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+}

@@ -53,6 +53,15 @@ class CartRepository @Inject constructor() {
         cartTotalLiveData.value = findCartTotal()
     }
 
+    fun getCartTotal(): Int {
+        return cartTotalLiveData.value!!
+    }
+
+    fun clearCart() {
+        cartItemsLiveData.postValue(mutableListOf())
+        cartTotalLiveData.postValue(0)
+    }
+
     private fun findCartTotal(): Int {
         return cart.fold(0) { acc, currItem ->
             acc + currItem.totalPrice

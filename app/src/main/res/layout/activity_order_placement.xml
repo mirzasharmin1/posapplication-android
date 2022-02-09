@@ -111,6 +111,7 @@
                 app:layout_constraintGuide_percent="0.90" />
 
             <Button
+                android:id="@+id/submit_order"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"

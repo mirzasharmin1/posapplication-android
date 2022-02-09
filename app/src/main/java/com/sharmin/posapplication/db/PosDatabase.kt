@@ -14,6 +14,8 @@ import com.sharmin.posapplication.db.models.*
 import android.content.Context
 import androidx.room.Room
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.sharmin.posapplication.db.dao.PeopleDao
+import com.sharmin.posapplication.db.dummy.dummyPeoples
 import com.sharmin.posapplication.db.dummy.dummyProducts
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -37,6 +39,8 @@ abstract class PosDatabase : RoomDatabase() {
     abstract fun transactionDao(): TransactionDao
 
     abstract fun transactionItemDao(): TransactionItemDao
+
+    abstract fun peopleDao(): PeopleDao
 
     companion object {
         @Volatile
@@ -78,6 +82,7 @@ abstract class PosDatabase : RoomDatabase() {
                 INSTANCE?.let { database ->
                     scope.launch(Dispatchers.IO) {
                         populateProducts(database.productDao())
+                        populatePeoples(database.peopleDao())
                     }
                 }
             }
@@ -90,6 +95,12 @@ abstract class PosDatabase : RoomDatabase() {
         suspend fun populateProducts(productDao: ProductDao) {
             dummyProducts().map {
                 productDao.insert(it)
+            }
+        }
+
+        suspend fun populatePeoples(peopleDao: PeopleDao) {
+            dummyPeoples().map {
+                peopleDao.insert(it)
             }
         }
     }

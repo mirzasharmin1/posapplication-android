@@ -6,9 +6,10 @@ import androidx.room.Relation
 
 @Entity
 data class TransactionItem (
-    @PrimaryKey val id: Int,
     val transactionId: Int,
     val productId: Int,
     val pricePerUnit: Int,
     val units: Int
-)
+) {
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+}

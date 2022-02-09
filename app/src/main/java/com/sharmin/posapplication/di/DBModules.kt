@@ -3,7 +3,10 @@ package com.sharmin.posapplication.di
 import android.content.Context
 import androidx.room.Room
 import com.sharmin.posapplication.db.PosDatabase
+import com.sharmin.posapplication.db.dao.PeopleDao
 import com.sharmin.posapplication.db.dao.ProductDao
+import com.sharmin.posapplication.db.dao.TransactionDao
+import com.sharmin.posapplication.db.dao.TransactionItemDao
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -25,7 +28,22 @@ class DatabaseModule {
     }
 
     @Provides
-    fun provideChannelDao(posDatabase: PosDatabase): ProductDao {
+    fun provideProductDao(posDatabase: PosDatabase): ProductDao {
         return posDatabase.productDao()
+    }
+
+    @Provides
+    fun provideTransactionDao(posDatabase: PosDatabase): TransactionDao {
+        return posDatabase.transactionDao()
+    }
+
+    @Provides
+    fun provideTransactionItemDao(posDatabase: PosDatabase): TransactionItemDao {
+        return posDatabase.transactionItemDao()
+    }
+
+    @Provides
+    fun providePeopleDao(posDatabase: PosDatabase): PeopleDao {
+        return posDatabase.peopleDao()
     }
 }

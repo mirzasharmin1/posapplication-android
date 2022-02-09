@@ -6,10 +6,11 @@ import java.util.*
 
 @Entity
 data class Transaction(
-    @PrimaryKey val id: Int,
     val peopleId: Int,
     val amountInserted: Int,
     val amountRefunded: Int,
     val createdAt: Date,
     val status: TransactionStatus
-)
+) {
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
+}

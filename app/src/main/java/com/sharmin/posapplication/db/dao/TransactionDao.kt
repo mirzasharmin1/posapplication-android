@@ -15,5 +15,5 @@ interface TransactionDao {
     fun getTransactions(): List<TransactionWithTransactionItems>
 
     @Insert
-    fun insert(vararg transaction: Transaction)
+    fun insert(transaction: Transaction): Long
 }
