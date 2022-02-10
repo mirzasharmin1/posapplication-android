@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.sharmin.posapplication.databinding.ActivityMainBinding
+import com.sharmin.posapplication.screens.commandCenter.CommandCenterActivity
 import com.sharmin.posapplication.screens.order.OrderActivity
 import com.sharmin.posapplication.screens.settings.SettingActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.submitBtn.setOnClickListener {
             viewModel.handleRememberMe(binding.userInput.text.toString(), binding.passwordInput.text.toString())
-            navigateToOrderActivity()
+            navigateToCommandCenterActivity()
         }
         
         binding.rememberMeCheckbox.setOnCheckedChangeListener { _, isChecked ->
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, SettingActivity::class.java))
     }
 
-    private fun navigateToOrderActivity() {
-        startActivity(Intent(this, OrderActivity::class.java))
+    private fun navigateToCommandCenterActivity() {
+        startActivity(Intent(this, CommandCenterActivity::class.java))
     }
 }

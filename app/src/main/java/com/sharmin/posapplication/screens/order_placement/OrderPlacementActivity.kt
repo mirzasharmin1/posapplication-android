@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sharmin.posapplication.R
 import com.sharmin.posapplication.databinding.ActivityOrderPlacementBinding
 import com.sharmin.posapplication.db.models.ProductType
-import com.sharmin.posapplication.screens.order.OrderActivity
+import com.sharmin.posapplication.screens.commandCenter.CommandCenterActivity
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -81,7 +81,7 @@ class OrderPlacementActivity : AppCompatActivity() {
         builder.setMessage(R.string.transaction_success_body)
         builder.setPositiveButton(R.string.okay_label) { dialog, _ ->
             dialog.dismiss()
-            navigateToOrderActivity()
+            navigateToCommandCenterActivity()
         }
         builder.show()
     }
@@ -96,8 +96,8 @@ class OrderPlacementActivity : AppCompatActivity() {
         builder.show()
     }
 
-    private fun navigateToOrderActivity() {
-        val navIntent = Intent(this, OrderActivity::class.java)
+    private fun navigateToCommandCenterActivity() {
+        val navIntent = Intent(this, CommandCenterActivity::class.java)
         navIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(navIntent)
 

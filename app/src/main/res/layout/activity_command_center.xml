@@ -7,7 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.sharmin.posapplication.screens.settings.SettingActivity">
+        tools:context="com.sharmin.posapplication.screens.commandCenter.CommandCenterActivity">
 
         <TextView
             android:id="@+id/headline"
@@ -18,7 +18,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="@string/stamford_pos_setting" />
+            android:text="@string/command_center" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,59 +45,24 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/setupBranch"
+                    android:id="@+id/newOrder"
                     android:layout_width="@dimen/setting_button_width"
                     android:layout_height="@dimen/setting_button_height"
                     android:textSize="@dimen/setting_text_size"
                     android:layout_marginTop="@dimen/setting_vertical_margin"
                     android:layout_marginBottom="@dimen/setting_vertical_margin"
-                    android:text="@string/setup_branch_label" />
+                    android:text="@string/new_order_label" />
 
                 <Button
-                    android:id="@+id/updateBranch"
+                    android:id="@+id/addProduct"
                     android:layout_width="@dimen/setting_button_width"
                     android:layout_height="@dimen/setting_button_height"
                     android:textSize="@dimen/setting_text_size"
                     android:layout_marginTop="@dimen/setting_vertical_margin"
                     android:layout_marginBottom="@dimen/setting_vertical_margin"
-                    android:text="@string/update_branch_label" />
-
-                <Button
-                    android:id="@+id/uploadDailyReport"
-                    android:layout_width="@dimen/setting_button_width"
-                    android:layout_height="@dimen/setting_button_height"
-                    android:textSize="@dimen/setting_text_size"
-                    android:layout_marginTop="@dimen/setting_vertical_margin"
-                    android:layout_marginBottom="@dimen/setting_vertical_margin"
-                    android:text="@string/upload_daily_report_label" />
-
-                <Button
-                    android:id="@+id/searchContact"
-                    android:layout_width="@dimen/setting_button_width"
-                    android:layout_height="@dimen/setting_button_height"
-                    android:textSize="@dimen/setting_text_size"
-                    android:layout_marginTop="@dimen/setting_vertical_margin"
-                    android:layout_marginBottom="@dimen/setting_vertical_margin"
-                    android:text="@string/search_contact_label" />
+                    android:text="@string/add_product_label" />
 
             </LinearLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                app:layout_constraintStart_toEndOf="@id/center_guideline"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <ImageView
-                    android:id="@+id/imgPreview"
-                    android:layout_width="400dp"
-                    android:layout_height="300dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

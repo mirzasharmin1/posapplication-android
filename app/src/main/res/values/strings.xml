@@ -37,5 +37,9 @@
     <string name="transaction_failed_title">Transaction Failed</string>
     <string name="transaction_failed_body">Order placing failed. Please try again.</string>
     <string name="go_back_label">Go Back</string>
+    <string name="search_contact_label">Search Contact</string>
+    <string name="command_center">Command Center</string>
+    <string name="new_order_label">New Order</string>
+    <string name="add_product_label">Add Product</string>
 
 </resources>
