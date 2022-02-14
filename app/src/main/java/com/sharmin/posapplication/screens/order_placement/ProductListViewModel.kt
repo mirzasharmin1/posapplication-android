@@ -22,6 +22,7 @@ class ProductListViewModel @AssistedInject constructor(
         fun create(productType: ProductType): ProductListViewModel
     }
 
+    // LiveData added here
     val products: LiveData<List<Product>>
         get() = productRepository.getProductsByType(productType)
 

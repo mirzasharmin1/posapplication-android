@@ -17,6 +17,7 @@ class OrderPlacementViewModel @Inject constructor(
     private val cartRepository: CartRepository,
 ) : ViewModel() {
 
+    // LiveData added here
     val transactionSuccessful = MutableLiveData<Boolean>(false)
     val transactionFailed = MutableLiveData<Boolean>(false)
 
