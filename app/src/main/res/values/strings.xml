@@ -41,5 +41,11 @@
     <string name="command_center">Command Center</string>
     <string name="new_order_label">New Order</string>
     <string name="add_product_label">Add Product</string>
+    <string name="Products">Products</string>
+    <string name="list_products_label">List Products</string>
+    <string name="product_name_label">Product Name:</string>
+    <string name="product_type_label">Product Type:</string>
+    <string name="product_price_label">Price:</string>
+    <string name="product_units_available_label">Units Available:</string>
 
 </resources>

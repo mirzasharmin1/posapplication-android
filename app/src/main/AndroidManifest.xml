@@ -60,6 +60,11 @@
             android:name=".screens.addProduct.AddProductActivity"
             android:exported="false"
             android:screenOrientation="landscape"/>
+        <activity
+            android:theme="@style/Theme.PosApplication.NoActionBar"
+            android:name=".screens.product_crud.ProductCRUDActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

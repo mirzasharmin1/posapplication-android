@@ -42,4 +42,12 @@
     <dimen name="product_list_margin_vertical">15dp</dimen>
     <dimen name="product_list_margin_horizontal">10dp</dimen>
     <dimen name="remember_me_guideline_begin">340dp</dimen>
+    <dimen name="product_crud_headline_margin_top">60dp</dimen>
+    <dimen name="product_right_section_margin">10dp</dimen>
+    <dimen name="product_crud_vertical_margin">15dp</dimen>
+    <dimen name="show_product_padding">15dp</dimen>
+    <dimen name="show_product_horizontal_padding">25dp</dimen>
+    <dimen name="form_label_margin_bottom">5dp</dimen>
+    <dimen name="form_label_text_size">20sp</dimen>
+    <dimen name="form_label_margin_top">30dp</dimen>
 </resources>

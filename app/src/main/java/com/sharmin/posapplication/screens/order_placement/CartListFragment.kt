@@ -36,8 +36,8 @@ class CartListFragment @Inject constructor() : Fragment() {
     }
 
     private fun setUpListeners() {
-        viewModel.cartItems.observe(viewLifecycleOwner, {
+        viewModel.cartItems.observe(viewLifecycleOwner) {
             cartListAdapter.addHeaderAndSubmitList(it)
-        })
+        }
     }
 }

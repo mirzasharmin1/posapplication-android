@@ -62,6 +62,15 @@
                     android:layout_marginBottom="@dimen/setting_vertical_margin"
                     android:text="@string/add_product_label" />
 
+                <Button
+                    android:id="@+id/listProducts"
+                    android:layout_width="@dimen/setting_button_width"
+                    android:layout_height="@dimen/setting_button_height"
+                    android:textSize="@dimen/setting_text_size"
+                    android:layout_marginTop="@dimen/setting_vertical_margin"
+                    android:layout_marginBottom="@dimen/setting_vertical_margin"
+                    android:text="@string/list_products_label" />
+
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

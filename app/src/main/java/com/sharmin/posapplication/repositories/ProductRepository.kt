@@ -11,4 +11,8 @@ class ProductRepository @Inject constructor(private val productDao: ProductDao) 
     fun getProductsByType(productType: ProductType): LiveData<List<Product>> {
         return productDao.getProductsByType(productType)
     }
+
+    fun getALlProducts(): LiveData<List<Product>> {
+        return productDao.getAllProducts()
+    }
 }
