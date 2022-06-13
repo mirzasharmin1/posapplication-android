@@ -13,5 +13,5 @@ class ProductViewModel @Inject constructor(
 ) : ViewModel() {
 
     val products: LiveData<List<Product>>
-        get() = productRepository.getALlProducts()
+        get() = productRepository.getAllProducts()
 }

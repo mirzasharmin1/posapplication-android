@@ -12,7 +12,7 @@ class ProductRepository @Inject constructor(private val productDao: ProductDao) 
         return productDao.getProductsByType(productType)
     }
 
-    fun getALlProducts(): LiveData<List<Product>> {
+    fun getAllProducts(): LiveData<List<Product>> {
         return productDao.getAllProducts()
     }
 }
