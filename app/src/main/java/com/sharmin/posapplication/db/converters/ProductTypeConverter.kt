@@ -7,6 +7,7 @@ class  ProductTypeConverter {
 
     @TypeConverter
     fun toProductType(value: Int): ProductType = enumValues<ProductType>()[value]
+
     @TypeConverter
     fun fromProductType(value: ProductType): Int = value.ordinal
 }
