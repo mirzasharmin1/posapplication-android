@@ -17,7 +17,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class ShowProductFragment @Inject constructor(val product: Product) : Fragment() {
 
-    val viewModel: ShowProductViewModel by viewModels()
     private lateinit var binding: FragmentShowProductBinding
 
     override fun onCreateView(

@@ -18,9 +18,9 @@ class TransactionRepository @Inject constructor(
 ) {
 
     suspend fun createTransaction(cartItems: List<CartItem>): Boolean {
-        val people = peopleRepository.getCurrentUser() ?: return false
-
         return try {
+            val people = peopleRepository.getCurrentUser() ?: return false
+
             val transaction = Transaction(
                 people.id,
                 cartRepository.getCartTotal(),
