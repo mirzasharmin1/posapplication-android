@@ -8,7 +8,6 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.mockito.kotlin.*
 import java.lang.RuntimeException
-import java.util.*
 import kotlin.test.assertEquals
 
 class TransactionRepositoryTest {
