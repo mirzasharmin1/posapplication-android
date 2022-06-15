@@ -17,3 +17,9 @@ buildscript {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task runUnitTests {
+    dependsOn ":app:test"
+    group "custom"
+    description "./gradlew runUnitTests # runs on GitHub Action"
+}
