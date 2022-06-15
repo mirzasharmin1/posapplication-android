@@ -15,7 +15,11 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class OrderPlacementActivity : AppCompatActivity() {
 
-    val viewModel: OrderPlacementViewModel by viewModels()
+    @Inject lateinit var orderPlacementViewModelFactory: OrderPlacementViewModel.OrderPlacementViewModelFactory
+    private val viewModel: OrderPlacementViewModel by viewModels {
+        OrderPlacementViewModel.provideFactory(orderPlacementViewModelFactory)
+    }
+
     private lateinit var binding: ActivityOrderPlacementBinding
 
     lateinit var productType: ProductType
