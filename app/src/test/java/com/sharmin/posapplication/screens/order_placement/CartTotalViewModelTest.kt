@@ -34,6 +34,7 @@ class CartTotalViewModelTest {
     @Test
     fun `cartTotal return cartTotal returned by cartRepository`() {
         val cartTotalValue = viewModel.cartTotal.getOrAwaitValue()
+
         assertEquals(cartTotalValue, cartTotal)
     }
 }

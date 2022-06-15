@@ -46,6 +46,7 @@ class CartListViewModelTest {
     @Test
     fun `cartItems return cartItems returned by cartRepository`() {
         val cartItemsValue = viewModel.cartItems.getOrAwaitValue()
+
         assertEquals(cartItemsValue, cartItems)
     }
 }

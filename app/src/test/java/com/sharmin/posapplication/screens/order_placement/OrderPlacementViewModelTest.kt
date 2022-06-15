@@ -101,6 +101,7 @@ class OrderPlacementViewModelTest {
         whenever(transactionRepository.createTransaction(any())).thenReturn(false)
 
         viewModel.createTransaction()
+
         verify(transactionRepository).createTransaction(cartItems)
         val transactionFailedResult = viewModel.transactionFailed.getOrAwaitValue()
         assertEquals(transactionFailedResult, true)
